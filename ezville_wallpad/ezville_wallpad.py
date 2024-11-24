@@ -53,6 +53,10 @@ RS485_DEVICE = {
             "ack": 0xC3,
         },
     },
+    "gasvalve": {
+        "state": {"id": "12", "cmd": "81"},
+        "power": {"id": "12", "cmd": "41", "ack": "C1"},  # 잠그기만 가능
+    },
     "batch": {  # 안보임
         "state": {"id": 0x33, "cmd": 0x81},
         "press": {"id": 0x33, "cmd": 0x41, "ack": 0xC1},
@@ -87,19 +91,19 @@ DISCOVERY_PAYLOAD = {
     "thermostat": [
         {
             "_intg": "climate",
-            "~": "{prefix}/thermostat/{grp}_{id}",
-            "name": "{prefix}_thermostat_{grp}_{id}",
-            "mode_stat_t": "~/power/state",
+            "~": "ezville/thermostat_{:0>2d}_{:0>2d}",
+            "name": "ezville_thermostat_{:0>2d}_{:0>2d}",
             "mode_cmd_t": "~/power/command",
-            "temp_stat_t": "~/target/state",
-            "temp_cmd_t": "~/target/command",
-            "curr_temp_t": "~/current/state",
-            "away_stat_t": "~/away/state",
-            "away_cmd_t": "~/away/command",
-            "modes": ["off", "heat"],
-            "min_temp": 5,
-            "max_temp": 40,
+            "mode_stat_t": "~/power/state",
+            "temp_stat_t": "~/setTemp/state",
+            "temp_cmd_t": "~/setTemp/command",
+            "curr_temp_t": "~/curTemp/state",
+            #        "modes": [ "off", "heat", "fan_only" ],     # 외출 모드는 fan_only로 매핑
+            "modes": ["heat", "off"],  # 외출 모드는 off로 매핑
+            "min_temp": "5",
+            "max_temp": "40",
         }
+    ]
     ],
     "plug": [
         {
