@@ -39,7 +39,7 @@ DISCOVERY_DEVICE = {
     "ids": [
         "ezville_wallpad",
     ],
-    "name": "ezville_wallpad",
+    "name": "ezville_wallpad1",
     "mf": "EzVille",
     "mdl": "EzVille Wallpad",
     "sw": "dongs0104/addons/ezville_wallpad",
