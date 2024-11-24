@@ -189,7 +189,7 @@ config_dir = "/data"
 
 HA_TOPIC = "ezville"
 STATE_TOPIC = HA_TOPIC + "/{}/{}/state"
-EW11_TOPIC = "ew11"
+EW11_TOPIC = "ew19"
 EW11_SEND_TOPIC = EW11_TOPIC + "/send"
 
 
