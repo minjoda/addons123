@@ -32,30 +32,10 @@ RS485_DEVICE = {
         },
     },
     "thermostat": {
-        "state": {
-            "id": 0x36,
-            "cmd": 0x81,
-        },
-        "last": {},
-        "away": {
-            "id": 0x36,
-            "cmd": 0x46,
-            "ack": 0xC6,
-        },
-        "target": {
-            "id": 0x36,
-            "cmd": 0x44,
-            "ack": 0xC4,
-        },
-        "power": {
-            "id": 0x36,
-            "cmd": 0x43,
-            "ack": 0xC3,
-        },
-    },
-    "gasvalve": {
-        "state": {"id": "12", "cmd": "81"},
-        "power": {"id": "12", "cmd": "41", "ack": "C1"},  # 잠그기만 가능
+        "state": {"id": "36", "cmd": "81"},
+        "power": {"id": "36", "cmd": "43", "ack": "C3"},
+        "away": {"id": "36", "cmd": "45", "ack": "C5"},
+        "target": {"id": "36", "cmd": "44", "ack": "C4"},
     },
     "batch": {  # 안보임
         "state": {"id": 0x33, "cmd": 0x81},
@@ -103,7 +83,6 @@ DISCOVERY_PAYLOAD = {
             "min_temp": "5",
             "max_temp": "40",
         }
-    ]
     ],
     "plug": [
         {
